@@ -12,7 +12,8 @@ import java.util.Iterator;
 import edu.calpoly.jvfessle.DoubleMathHelper;
 
 public final class DoubleMath {
-
+	// COGNITIVE COMPLEXITY: 22
+	// CYCLOMATIC COMPLEXITY: 18
 	static double roundIntermediate(double x, RoundingMode mode) {
 	    if (!DoubleMathHelper.isFinite(x)) {
 	      throw new ArithmeticException("input is infinite or NaN");
