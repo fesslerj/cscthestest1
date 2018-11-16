@@ -9,29 +9,29 @@ import static java.lang.Math.rint;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.util.Iterator;
-import edu.calpoly.jvfessle.DoubleMathHelper;
+import edu.calpoly.jvfessle.HelperClass;
 
 public final class DoubleMath {
 	// COGNITIVE COMPLEXITY: 22
 	// CYCLOMATIC COMPLEXITY: 18
 	static double roundIntermediate(double x, RoundingMode mode) {
-	    if (!DoubleMathHelper.isFinite(x)) {
+	    if (!HelperClass.isFinite(x)) {
 	      throw new ArithmeticException("input is infinite or NaN");
 	    }
 	    switch (mode) {
 	      case UNNECESSARY:
-	    	  DoubleMathHelper.checkRoundingUnnecessary(DoubleMathHelper.isMathematicalInteger(x));
+	    	  HelperClass.checkRoundingUnnecessary(HelperClass.isMathematicalInteger(x));
 	        return x;
 
 	      case FLOOR:
-	        if (x >= 0.0 || DoubleMathHelper.isMathematicalInteger(x)) {
+	        if (x >= 0.0 || HelperClass.isMathematicalInteger(x)) {
 	          return x;
 	        } else {
 	          return (long) x - 1;
 	        }
 
 	      case CEILING:
-	        if (x <= 0.0 || DoubleMathHelper.isMathematicalInteger(x)) {
+	        if (x <= 0.0 || HelperClass.isMathematicalInteger(x)) {
 	          return x;
 	        } else {
 	          return (long) x + 1;
@@ -41,7 +41,7 @@ public final class DoubleMath {
 	        return x;
 
 	      case UP:
-	        if (DoubleMathHelper.isMathematicalInteger(x)) {
+	        if (HelperClass.isMathematicalInteger(x)) {
 	          return x;
 	        } else {
 	          return (long) x + (x > 0 ? 1 : -1);

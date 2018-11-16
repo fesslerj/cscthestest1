@@ -2,8 +2,10 @@ package edu.calpoly.jvfessle;
 
 import java.math.RoundingMode;
 
-public final class Branch1 {//12,5
-	public static int blah(int x) {
+public final class Branch1 {
+	// COGNITIVE COMPLEXITY: 12
+	// CYCLOMATIC COMPLEXITY: 5
+	public static int addMD(int x) {
 		if ((x & 1) > 0) {
 			if ((x & 2) > 0) {
 				return x + 5;
@@ -13,12 +15,12 @@ public final class Branch1 {//12,5
 		} else {
 			if ((x & 2) > 0) {
 				if ((x & 4) > 0) {
-					return x + (int)DoubleMathHelper.divide(x,  1, RoundingMode.DOWN);
+					return x + (int)HelperClass.divide(x,  1, RoundingMode.DOWN);
 				} else {
-					return x - (int)DoubleMathHelper.divide(x,  1, RoundingMode.DOWN);
+					return x - (int)HelperClass.divide(x,  1, RoundingMode.DOWN);
 				}
 			} else {
-				return x * x - blah(x - 1);
+				return x * x - (x - 1);
 			}
 		}
 	}

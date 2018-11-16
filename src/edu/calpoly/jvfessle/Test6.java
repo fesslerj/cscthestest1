@@ -1,7 +1,9 @@
 package edu.calpoly.jvfessle;
 
 public final class Test6 {
-	public static int blah6(double x) {//6,9
+	// COGNITIVE COMPLEXITY: 6
+	// CYCLOMATIC COMPLEXITY: 9
+	public static int getRegion(double x) {
 		double z = Math.cos(x);
 		double y = Math.sin(x);
 		

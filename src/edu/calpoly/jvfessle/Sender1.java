@@ -24,29 +24,29 @@ Statistics.statisticsMap.entrySet()) {
             long maxOutput = numbers[7];
             long maxElapsed = numbers[8];
             long maxConcurrent = numbers[9];
-            String version = DoubleMathHelper.getUrl().getParameter(DoubleMathHelper.DEFAULT_PROTOCOL);
+            String version = HelperClass.getUrl().getParameter(HelperClass.DEFAULT_PROTOCOL);
 
             // send statistics data
             URL url = statistics.getUrl()
-                    .addParameters(DoubleMathHelper.TIMESTAMP, timestamp,
-                    		DoubleMathHelper.SUCCESS, String.valueOf(success),
-                    		DoubleMathHelper.FAILURE, String.valueOf(failure),
-                    		DoubleMathHelper.INPUT, String.valueOf(input),
-                    		DoubleMathHelper.OUTPUT, String.valueOf(output),
-                    		DoubleMathHelper.ELAPSED, String.valueOf(elapsed),
-                    		DoubleMathHelper.CONCURRENT, String.valueOf(concurrent),
-                    		DoubleMathHelper.MAX_INPUT, String.valueOf(maxInput),
-                    		DoubleMathHelper.MAX_OUTPUT, String.valueOf(maxOutput),
-                    		DoubleMathHelper.MAX_ELAPSED, String.valueOf(maxElapsed),
-                    		DoubleMathHelper.MAX_CONCURRENT, 
+                    .addParameters(HelperClass.TIMESTAMP, timestamp,
+                    		HelperClass.SUCCESS, String.valueOf(success),
+                    		HelperClass.FAILURE, String.valueOf(failure),
+                    		HelperClass.INPUT, String.valueOf(input),
+                    		HelperClass.OUTPUT, String.valueOf(output),
+                    		HelperClass.ELAPSED, String.valueOf(elapsed),
+                    		HelperClass.CONCURRENT, String.valueOf(concurrent),
+                    		HelperClass.MAX_INPUT, String.valueOf(maxInput),
+                    		HelperClass.MAX_OUTPUT, String.valueOf(maxOutput),
+                    		HelperClass.MAX_ELAPSED, String.valueOf(maxElapsed),
+                    		HelperClass.MAX_CONCURRENT, 
 String.valueOf(maxConcurrent),
-DoubleMathHelper.DEFAULT_PROTOCOL, version
+HelperClass.DEFAULT_PROTOCOL, version
                     );
-            DoubleMathHelper.collect(url);
+            HelperClass.collect(url);
 
             // reset
             long[] current;
-            long[] update = new long[DoubleMathHelper.LENGTH];
+            long[] update = new long[HelperClass.LENGTH];
             do {
                 current = reference.get();
                 if (current == null) {

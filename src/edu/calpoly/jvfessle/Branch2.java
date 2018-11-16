@@ -1,7 +1,9 @@
 package edu.calpoly.jvfessle;
 
 public final class Branch2 {
-	public static int blah3(int x, int y) { //8,8
+	// COGNITIVE COMPLEXITY: 8
+	// CYCLOMATIC COMPLEXITY: 8
+	public static int compute(int x, int y) {
 		int z = 2;
 		
 		if ((x & 1) > 0)

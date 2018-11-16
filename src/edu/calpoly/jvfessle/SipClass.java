@@ -6,20 +6,20 @@ public final class SipClass {
 	@SuppressWarnings("unused")
 	private static void sipRound(int iterations) {
 		for (int i = 0; i < iterations; i++) {
-			DoubleMathHelper.v0 += DoubleMathHelper.v1;
-			DoubleMathHelper.v2 += DoubleMathHelper.v3;
-			DoubleMathHelper.v1 = Long.rotateLeft(DoubleMathHelper.v1, 13);
-			DoubleMathHelper.v3 = Long.rotateLeft(DoubleMathHelper.v3, 16);
-			DoubleMathHelper.v1 ^= DoubleMathHelper.v0;
-			DoubleMathHelper.v3 ^= DoubleMathHelper.v2;
-			DoubleMathHelper.v0 = Long.rotateLeft(DoubleMathHelper.v0, 32);
-			DoubleMathHelper.v2 += DoubleMathHelper.v1;
-			DoubleMathHelper.v0 += DoubleMathHelper.v3;
-			DoubleMathHelper.v1 = Long.rotateLeft(DoubleMathHelper.v1, 17);
-			DoubleMathHelper.v3 = Long.rotateLeft(DoubleMathHelper.v3, 21);
-			DoubleMathHelper.v1 ^= DoubleMathHelper.v2;
-			DoubleMathHelper.v3 ^= DoubleMathHelper.v0;
-			DoubleMathHelper.v2 = Long.rotateLeft(DoubleMathHelper.v2, 32);
+			HelperClass.v0 += HelperClass.v1;
+			HelperClass.v2 += HelperClass.v3;
+			HelperClass.v1 = Long.rotateLeft(HelperClass.v1, 13);
+			HelperClass.v3 = Long.rotateLeft(HelperClass.v3, 16);
+			HelperClass.v1 ^= HelperClass.v0;
+			HelperClass.v3 ^= HelperClass.v2;
+			HelperClass.v0 = Long.rotateLeft(HelperClass.v0, 32);
+			HelperClass.v2 += HelperClass.v1;
+			HelperClass.v0 += HelperClass.v3;
+			HelperClass.v1 = Long.rotateLeft(HelperClass.v1, 17);
+			HelperClass.v3 = Long.rotateLeft(HelperClass.v3, 21);
+			HelperClass.v1 ^= HelperClass.v2;
+			HelperClass.v3 ^= HelperClass.v0;
+			HelperClass.v2 = Long.rotateLeft(HelperClass.v2, 32);
 		}
 	}
 }
