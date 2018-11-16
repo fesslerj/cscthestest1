@@ -1,7 +1,9 @@
 package edu.calpoly.jvfessle;
 
 public final class Switch2 {
-	public static String keyToString(char key) {//1,7
+	// COGNITIVE COMPLEXITY: 1
+	// CYCLOMATIC COMPLEXITY: 7
+	public static String keyToString(char key) {
 	    switch (key) {
 	        case HelperClass.SETTINGS_HEADER_TABLE_SIZE:
 	            return "HEADER_TABLE_SIZE";

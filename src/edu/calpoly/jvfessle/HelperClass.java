@@ -3,6 +3,9 @@ package edu.calpoly.jvfessle;
 import java.math.RoundingMode;
 import java.net.URL;
 
+////////////////////////////////////////////////////////
+// HELPER CLASS - NOT USED DIRECTLY AS A CODE SAMPLE!!!
+////////////////////////////////////////////////////////
 public final class HelperClass {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

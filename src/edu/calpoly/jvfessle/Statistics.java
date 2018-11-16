@@ -4,6 +4,9 @@ import java.net.URL;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
+////////////////////////////////////////////////////////
+//HELPER CLASS - NOT USED DIRECTLY AS A CODE SAMPLE!!!
+////////////////////////////////////////////////////////
 public class Statistics {
 	public static Map<Statistics, AtomicReference<long[]>> statisticsMap;
 

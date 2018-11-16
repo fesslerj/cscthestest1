@@ -3,10 +3,8 @@ package edu.calpoly.jvfessle;
 import java.util.Objects;
 
 public final class ObjectAdder<E> {
-	
-	
-	//COG=10
-	//CYC=7
+	// COGNITIVE COMPLEXITY: 10
+	// CYCLOMATIC COMPLEXITY: 7
 	public boolean add(E object) {
 		long[] entries = HelperClass.entries;
 		Object[] elements = HelperClass.elements;
@@ -30,7 +28,7 @@ public final class ObjectAdder<E> {
 			entries[last] = HelperClass.swapNext(entry, newEntryIndex);
 		}
 		if (newEntryIndex == Integer.MAX_VALUE) {
-			throw new IllegalStateException("Cannot contain more than Integer.MAX_VALUE elements!");
+			throw new IllegalStateException("Cannot contain more than "+"Integer.MAX_VALUE elements!");
 		}
 		int newSize = newEntryIndex + 1;
 		HelperClass.resizeMeMaybe(newSize);

@@ -5,7 +5,9 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
 public final class Sender1 {
-	public static void send() { // 7,4
+	// COGNITIVE COMPLEXITY: 7
+	// CYCLOMATIC COMPLEXITY: 4
+	public static void send() {
 		
         String timestamp = String.valueOf(System.currentTimeMillis());
         for (Map.Entry<Statistics, AtomicReference<long[]>> entry : 

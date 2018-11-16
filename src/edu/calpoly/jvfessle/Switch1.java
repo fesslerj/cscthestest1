@@ -1,7 +1,9 @@
 package edu.calpoly.jvfessle;
 
 public final class Switch1 {
-	public static void verifyStandardSetting(int key, Long value) {//18,18
+	// COGNITIVE COMPLEXITY: 18
+	// CYCLOMATIC COMPLEXITY: 18
+	public static void verifyStandardSetting(int key, Long value) {
 		HelperClass.checkNotNull(value, "value");
 	    switch (key) {
 	        case HelperClass.SETTINGS_HEADER_TABLE_SIZE:

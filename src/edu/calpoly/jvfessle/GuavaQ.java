@@ -14,8 +14,8 @@ import java.util.Map;
 import edu.calpoly.jvfessle.HelperClass;
 
 public final class GuavaQ {
-	// COG = 10
-	// CYC = 7
+	// COGNITIVE COMPLEXITY: 10
+	// CYCLOMATIC COMPLEXITY: 7
 	public Map<Integer, Double> computeInPlace(double... dataset) {
 		HelperClass.checkArgument(dataset.length > 0, "Cannot calculate quantiles of an empty dataset");
 		if (HelperClass.containsNaN(dataset)) {

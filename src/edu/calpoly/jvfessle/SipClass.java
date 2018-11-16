@@ -1,8 +1,8 @@
 package edu.calpoly.jvfessle;
 
 public final class SipClass {
-	// COG=1
-	// CYC=2
+	// COGNITIVE COMPLEXITY: 1
+	// CYCLOMATIC COMPLEXITY: 2
 	@SuppressWarnings("unused")
 	private static void sipRound(int iterations) {
 		for (int i = 0; i < iterations; i++) {

@@ -1,8 +1,8 @@
 package edu.calpoly.jvfessle;
 
 public class UnsafeGetter {
-	// COG=7
-	// CYC=4
+	// COGNITIVE COMPLEXITY: 7
+	// CYCLOMATIC COMPLEXITY: 4
 	@SuppressWarnings("restriction")
 	private static sun.misc.Unsafe getUnsafe() {
         try {
