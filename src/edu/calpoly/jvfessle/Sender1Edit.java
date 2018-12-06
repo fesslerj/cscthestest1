@@ -1,0 +1,72 @@
+package edu.calpoly.jvfessle;
+
+import java.net.URL;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
+
+public class Sender1Edit {
+	// COGNITIVE COMPLEXITY: 7
+	// CYCLOMATIC COMPLEXITY: 4
+	public static void send() {
+		
+        String timestamp = String.valueOf(System.currentTimeMillis());
+        for (Map.Entry<Statistics, AtomicReference<long[]>> entry : 
+        	Statistics.statisticsMap.entrySet()) {
+            Statistics statistics = entry.getKey();
+            AtomicReference<long[]> reference = entry.getValue();
+            long[] numbers = reference.get();
+            long success = numbers[0];
+            long failure = numbers[1];
+            long input = numbers[2];
+            long output = numbers[3];
+            long elapsed = numbers[4];
+            long concurrent = numbers[5];
+            long maxInput = numbers[6];
+            long maxOutput = numbers[7];
+            long maxElapsed = numbers[8];
+            long maxConcurrent = numbers[9];
+            String version = HelperClass.getUrl().getParameter(HelperClass.DEFAULT_PROTOCOL);
+
+            URL url;
+            url = statistics.getUrl()
+                    .addParameters(HelperClass.TIMESTAMP, timestamp,
+                    		HelperClass.SUCCESS, String.valueOf(success),
+                    		HelperClass.FAILURE, String.valueOf(failure),
+                    		HelperClass.INPUT, String.valueOf(input),
+                    		HelperClass.OUTPUT, String.valueOf(output),
+                    		HelperClass.ELAPSED, String.valueOf(elapsed),
+                    		HelperClass.CONCURRENT, String.valueOf(concurrent),
+                    		HelperClass.MAX_INPUT, String.valueOf(maxInput),
+                    		HelperClass.MAX_OUTPUT, String.valueOf(maxOutput),
+                    		HelperClass.MAX_ELAPSED, String.valueOf(maxElapsed),
+                    		HelperClass.MAX_CONCURRENT, 
+							String.valueOf(maxConcurrent),
+							HelperClass.DEFAULT_PROTOCOL, version
+                    );
+            for (boolean cond = url != null; cond;) {
+            	HelperClass.collect(url);
+            }
+
+            long[] current = null;
+            long[] update = new long[HelperClass.LENGTH];
+            for (boolean reiterate = true; reiterate; reiterate = !reference.compareAndSet(current, update)) {
+                current = reference.get();
+                if (current == null) {
+                    update[0] = 0;
+                    update[1] = 0;
+                    update[2] = 0;
+                    update[3] = 0;
+                    update[4] = 0;
+                    update[5] = 0;
+                } else {
+                    update[0] = current[0] - success;
+                    update[1] = current[1] - failure;
+                    update[2] = current[2] - input;
+                    update[3] = current[3] - output;
+                    update[4] = current[4] - elapsed;
+                    update[5] = current[5] - concurrent;
+                }
+            }
+        }
+	}
+}
