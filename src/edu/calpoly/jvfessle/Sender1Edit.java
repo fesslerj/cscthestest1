@@ -5,8 +5,8 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class Sender1Edit {
-	// COGNITIVE COMPLEXITY: 7
-	// CYCLOMATIC COMPLEXITY: 4
+	// COGNITIVE COMPLEXITY: 9
+	// CYCLOMATIC COMPLEXITY: 5
 	public static void send() {
 		
         String timestamp = String.valueOf(System.currentTimeMillis());
